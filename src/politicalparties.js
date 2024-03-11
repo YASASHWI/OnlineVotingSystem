@@ -1,5 +1,11 @@
 import React from "react";
 import './politicalparties.css';
+import tdpImage from './tdp.jpg';
+import ysrcpImage from './ysrcp.jpg';
+import janasenaImage from './janasena.jpg';
+import bjpImage from './bjp.png';
+import incImage from './inc.png';
+import cpiImage from './cpi.jpg';
 import { callApi, errorResponse, getSession, setSession } from './main';
 import { NavLink } from "react-router-dom";
 
@@ -69,38 +75,38 @@ class PoliticalParties extends React.Component {
                                         <td>1</td>
                                         <td>TELUGU DESAM </td>
                                         <td>CHANDRABABU NAIDU</td>
-                                        <td>CYCLE</td>
+                                        <td><img src={tdpImage} alt="TELUGU DESAM Symbol" style={{ width: '50px', height: '50px' }} /></td>
                                     </tr>
                                     {/* Repeat this structure for each party */}
                                     <tr>
                                         <td>2</td>
                                         <td>YSRCP</td>
                                         <td>JAGAN MOHAN REDDY</td>
-                                        <td>FAN</td>
+                                        <td><img src={ysrcpImage} alt="YSRCP Symbol" style={{ width: '50px', height: '50px' }} /></td>
                                     </tr>
                                     <tr>
                                         <td>3</td>
                                         <td>JANASENA</td>
                                         <td>PAWAN KALYAN</td>
-                                        <td>GLASS</td>
+                                        <td><img src={janasenaImage} alt="JANASENA Symbol" style={{ width: '50px', height: '50px' }} /></td>
                                     </tr>
                                     <tr>
                                         <td>4</td>
                                         <td>KANNA LAKSMI NARAYANA</td>
                                         <td>BJP</td>
-                                        <td>FLOWER</td>
+                                        <td><img src={bjpImage} alt="BJP Symbol" style={{ width: '50px', height: '50px' }} /></td>
                                     </tr>
                                     <tr>
                                         <td>5</td>
                                         <td>Sake Sailajanath</td>
                                         <td>CONGRESS</td>
-                                        <td>HAND</td>
+                                        <td><img src={incImage} alt="CONGRESS Symbol" style={{ width: '50px', height: '50px' }} /></td>
                                     </tr>
                                     <tr>
                                         <td>6</td>
                                         <td>RAKESH YADAV</td>
                                         <td>Janata Dal (United)</td>
-                                        <td>ARROW</td>
+                                        <td><img src={cpiImage} alt="Janata Dal (United) Symbol" style={{ width: '50px', height: '50px' }} /></td>
                                     </tr>
                                 </tbody>
                             </table>

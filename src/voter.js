@@ -4,6 +4,12 @@ import { callApi, errorResponse, getSession, setSession } from './main';
 import menuicon from './images/menu.jpg';
 import { NavLink } from 'react-router-dom';
 import logouticon from './images/logout.png';
+import tdpImage from './tdp.jpg';
+import ysrcpImage from './ysrcp.jpg';
+import janasenaImage from './janasena.jpg';
+import bjpImage from './bjp.png';
+import incImage from './inc.png';
+import cpiImage from './cpi.jpg';
 import Axios from 'axios';
 const HS1 = { "paddingLeft": "5px", "marginRight": "20px" };
 const HS2 = {"float" : "right", "padding-right" : "5px", "cursor" : "pointer"};
@@ -123,12 +129,12 @@ class VoterDoneInfo extends React.Component {
         super(props);
         this.state = {
             candidates: [
-                { id: 1, party: 'TELUGU DESAM', candidate: 'CHANDRABABU NAIDU', voteCount: 0 },
-                { id: 2, party: 'YSRCP', candidate: 'JAGAN MOHAN REDDY', voteCount: 0 },
-                { id: 3, party: 'JANASENA', candidate: 'PAWAN KALYAN', voteCount: 0 },
-                { id: 4, party: 'BJP', candidate: 'KANNA LAKSMI NARAYANA', voteCount: 0 },
-                { id: 5, party: 'Indian National Congress (INC)', candidate: 'Sake Sailajanath', voteCount: 0 },
-                { id: 6, party: 'Communist Party of India (CPI)', candidate: 'RAMA KRISHNA', voteCount: 0 },
+                { id: 1, party: 'TELUGU DESAM', candidate: 'CHANDRABABU NAIDU',symbol:'./tdp.jpg', voteCount: 0 },
+                { id: 2, party: 'YSRCP', candidate: 'JAGAN MOHAN REDDY', symbol: './ysrcp.jpg', voteCount: 0 },
+                { id: 3, party: 'JANASENA', candidate: 'PAWAN KALYAN',  symbol: './janasena.jpg',voteCount: 0 },
+                { id: 4, party: 'BJP', candidate: 'KANNA LAKSMI NARAYANA', symbol: './bjp.jpg',voteCount: 0 },
+                { id: 5, party: 'Indian National Congress (INC)', candidate: 'Sake Sailajanath', symbol: './inc.jpg',voteCount: 0 },
+                { id: 6, party: 'Communist Party of India (CPI)', candidate: 'RAMA KRISHNA', symbol: './cpi.jpg',voteCount: 0 },
             ]
         };
     }
@@ -156,6 +162,7 @@ class VoterDoneInfo extends React.Component {
                             <tr>
                                 <th>Sl. No.</th>
                                 <th>Party Name</th>
+                                <th>Party Symbol</th>
                                 <th>Candidate Name</th>
                                 <th>Vote</th>
                             </tr>
@@ -165,6 +172,14 @@ class VoterDoneInfo extends React.Component {
                                 <tr key={candidate.id}>
                                     <td>{index + 1}</td>
                                     <td>{candidate.party}</td>
+                                    <td>
+                                        {candidate.party === 'TELUGU DESAM' && <img src={tdpImage} alt={candidate.party} style={{ width: '50px', height: '50px' }} />}
+                                        {candidate.party === 'YSRCP' && <img src={ysrcpImage} alt={candidate.party} style={{ width: '50px', height: '50px' }} />}
+                                        {candidate.party === 'JANASENA' && <img src={janasenaImage} alt={candidate.party} style={{ width: '50px', height: '50px' }} />}
+                                        {candidate.party === 'BJP' && <img src={bjpImage} alt={candidate.party} style={{ width: '50px', height: '50px' }} />}
+                                        {candidate.party === 'Indian National Congress (INC)' && <img src={incImage} alt={candidate.party} style={{ width: '50px', height: '50px' }} />}
+                                        {candidate.party === 'Communist Party of India (CPI)' && <img src={cpiImage} alt={candidate.party} style={{ width: '50px', height: '50px' }} />}
+                                    </td>
                                     <td>{candidate.candidate}</td>
                                     <td>
                                         <button onClick={() => this.handleVote(candidate.party)}>Vote</button>
