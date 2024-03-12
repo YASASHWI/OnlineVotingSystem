@@ -104,7 +104,7 @@ class PoliticalParties extends React.Component {
                                     </tr>
                                     <tr>
                                         <td>6</td>
-                                        <td>RAKESH YADAV</td>
+                                        <td>RAKESH </td>
                                         <td>Janata Dal (United)</td>
                                         <td><img src={cpiImage} alt="Janata Dal (United) Symbol" style={{ width: '50px', height: '50px' }} /></td>
                                     </tr>
