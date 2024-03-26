@@ -12,6 +12,9 @@ class Home extends React.Component {
     login() {
         window.location.replace("/login");
     }
+    adminlogin(){
+        window.location.replace("/admin");
+    }
     learnmore(){
         window.location.replace("/learnmore")
     }
@@ -25,7 +28,8 @@ class Home extends React.Component {
                     <NavLink to="/about" className="nav-link">About</NavLink>
                     <NavLink to="/mobile" className="nav-link">Mobile Voting</NavLink>
                     <NavLink to="/contact" className="nav-link">Contact us</NavLink>
-                    <button className="button" onClick={this.login}>Login</button>
+                    <button className="button" onClick={this.login}>LOGIN</button>
+                    <button className="button1" onClick={this.adminlogin}>ADMIN LOGIN</button>
                     <label id='HL1' style={HS4}></label>
                     <div id="header"></div>
                 </div>

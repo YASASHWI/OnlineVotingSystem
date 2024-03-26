@@ -1,23 +1,40 @@
-/* Page Style */
 html, body {
     width: 100%;
     height: 100%;
     margin: 0;
-    font-family: Arial, sans-serif; /* Added font family */
 }
 
-.full-height {
+.full-height{
     display: flex;
     flex-direction: column;
     min-height: 100vh; 
 }
-
+/* Header */
 .header {
     background: rgb(0,71,171,1);
-    height: 50px; /* Increased height for better visibility */
+    height: 30px;
     color: white;
-    line-height: 50px; /* Adjusted line-height */
+    line-height: 30px;
     font-weight: bold;
+    position: fixed; /* Fixed positioning to keep header at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Footer */
+.footer {
+    background: rgb(0,71,171,1);
+    height: 30px;
+    color: white;
+    line-height: 30px;
+    font-size: 7pt;
+    text-align: center;
+    font-weight: bold;
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 
 .nav-link {
@@ -28,9 +45,13 @@ html, body {
 
 /* Content */
 .content {
-    flex-grow: 1;
-    display: flex; /* Ensuring content and image are aligned properly */
-    align-items: center; /* Vertically centering content */
+    flex-grow: 1; 
+    align-items: center;
+    padding-top: 30px; /* Add padding to top to make space for header */
+    padding-bottom: 30px; /* Add padding to bottom to make space for footer */
+    box-sizing: border-box; /* Include padding in width calculation */
+    width: 80%; /* Ensure content takes up the full width */
+    height: calc(100% - 60px); /* aCalculate height of content area */
 }
 .content img {
     max-width: 100%; /* Ensuring image fits within container */
@@ -38,33 +59,37 @@ html, body {
     margin-right: 20px; /* Added margin for spacing */
 }
 
-/* Footer */
-.footer {
-    background: rgb(0,71,171,1);
-    height: 50px; /* Increased height for better visibility */
-    color: white;
-    line-height: 50px; /* Adjusted line-height */
-    font-size: 10pt; /* Increased font size for better readability */
-    text-align: center;
-    font-weight: bold;
-}
-
-.button {
+.button{
     float:right;
     padding-right: 1px;
-    border: none;
+    border: 1px;
     color: rgb(0,71,171,1);
     padding: 5px 20px; /* Increased padding for better clickability */
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 18px; /* Increased font size for better visibility */
+    font-size: 20px; /* Increased font size for better visibility */
+    cursor: pointer;
+}
+.button:hover {
+    background-color: rgb(242, 22, 22)
+}
+
+.button1{
+    float:right;
+    margin-right: 10px;
+    padding-right: 1px;
+    border: 1px;
+    color: rgb(0,71,171,1);
+    padding: 5px 20px; /* Increased padding for better clickability */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px; /* Increased font size for better visibility */
     cursor: pointer;
 }
 
-
-
-.button:hover {
+.button1:hover {
     background-color: rgb(255,255,255,1)
 }
 
@@ -75,16 +100,7 @@ p {
     color: #333;
     margin-bottom: 30px; /* Increased margin for better spacing */
 }
-/* Footer */
-.footer {
-    background: rgb(0,71,171,1);
-    height: 50px; /* Increased height for better visibility */
-    color: white;
-    line-height: 50px; /* Adjusted line-height */
-    font-size: 10pt; /* Increased font size for better readability */
-    text-align: center;
-    font-weight: bold;
-}
+
 
 .btn {
     float: left;
@@ -95,7 +111,7 @@ p {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 18px; /* Increased font size for better visibility */
+    font-size: 15px; /* Increased font size for better visibility */
     cursor: pointer;
 }
 

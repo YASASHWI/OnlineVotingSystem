@@ -1,19 +1,17 @@
-import React from "react"
+import React from "react";
 import './about.css';
 import { NavLink } from "react-router-dom";
 import image4 from './images/image4.jpg'; // Import left image
 import image5 from './images/image5.jpg'; // Import right image
-import image from './images/image.jpeg';
 
 const HS1 = { "paddingLeft": "5px", "marginRight": "20px" };
 const HS4 = {"float" : "right", "paddingRight" : "10px"};
 
 class About extends React.Component {
-    
     render() {
         return (
-            <div className='full-height'>
-                <div className='header'>
+            <div className='full-height11'>
+                <div className='header11'>
                     <label style={HS1}>eBallot | ONLINE VOTING MANAGEMENT SYSTEM</label>
                     <NavLink to="/" className="nav-link">Home</NavLink>
                     <NavLink to="/about" className="nav-link">About</NavLink>
@@ -23,7 +21,7 @@ class About extends React.Component {
                     <label id='HL1' style={HS4}></label>
                     <div id="header"></div>
                 </div>
-                <div className='content'>
+                <div className='content11'>
                     <div className="about-container">
                         <div className="left-image">
                             <img src={image4} alt="VOTING SYSTEM" />
@@ -45,41 +43,15 @@ class About extends React.Component {
                             <center>
                                 <h1>THE VISION</h1>
                             </center>
-                            <p>Increase stakeholder participation in decision making across organizations by providing Right2Vote to all stakeholders</p>
-                            <p>To make organizations more efficient by making the activity of stakeholder participation in decision making very efficient in terms of cost, time and effort involved</p>
+                            <p>Increase stakeholder participation in decision making across organizations by providing Right2Vote to all stakeholders
+                            To make organizations more efficient by making the activity of stakeholder participation in decision making very efficient in terms of cost, time and effort involved</p>
                             
 
-                            <center>
-                                <h1>THE MISSION</h1>
-                            </center>
-                            <p>To ensure that Online voting platform is used during the 2024 Indian Andhra Pradesh to provide Right to Vote to all citizens of India including soldiers, NRIs, migrants and other sections who are denied Right to Vote due to booth based voting.</p>
-                            
-
-                            <center>
-                                <h1>OUR FOCUS</h1>
-                            </center>
-                            <p>We are a VOTING focused platform. We are not a market survey tool like Survey Monkey or opinion poll tool like poll daddy. Hence, we are also very focused on SECURITY and AUTHENICATION, unlike market survey or polling platforms where these are not major concern area.
-                            We are a INDIA focused company. We would first like to make meaningful difference in our country before venturing abroad.
-                            We are an ETHICS focused organization and would not take short cuts.</p>
-                            
-
-                            <center>
-                                <h1>MEET THE TEAM</h1>
-                            </center>
-                            <center>
-                                <div className="left-image1">
-                                    <img src={image} alt="GUBBA VENKATA NAGA DHANUSH" />
-                                </div>
-                            </center>
-                            
-
-                        
-                        
                         </div>
                         
                     </div>
                 </div>
-                <div className='footer'>
+                <div className='footer11'>
                     Copyright © 2024, eBallot.
                 </div>
             </div>

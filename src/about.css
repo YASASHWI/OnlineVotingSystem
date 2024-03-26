@@ -5,34 +5,26 @@ html, body {
     margin: 0;
 }
 
-.full-height {
+.full-height11{
     display: flex;
     flex-direction: column;
     min-height: 100vh; 
 }
-.header {
+/* Header */
+.header11 {
     background: rgb(0,71,171,1);
     height: 30px;
     color: white;
     line-height: 30px;
     font-weight: bold;
-}
-
-.nav-link {
-    margin-right: 20px; 
-    text-decoration: none;
-    color: rgb(255,255,255,1);
-}
-
-/* Content */
-.content {
-    flex-grow: 1;
-    float: right;
-    width: 95%;
+    position: fixed; /* Fixed positioning to keep header at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 /* Footer */
-.footer {
+.footer11 {
     background: rgb(0,71,171,1);
     height: 30px;
     color: white;
@@ -40,10 +32,24 @@ html, body {
     font-size: 7pt;
     text-align: center;
     font-weight: bold;
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 
+/* Content */
+.content11 {
+    flex-grow: 1; 
+    overflow-y: auto; 
+    padding-top: 30px; /* Add padding to top to make space for header */
+    padding-bottom: 30px; /* Add padding to bottom to make space for footer */
+    box-sizing: border-box; /* Include padding in width calculation */
+    width: 100%; /* Ensure content takes up the full width */
+    height: calc(100% - 60px); /* aCalculate height of content area */
+}
 
-.left-image {
+.left-image{
     width: 30%; /* Take up half of the container width */
     float: left; /* Float the images to the left */
     margin-right: 20px; /* Add some spacing between the image and the content */

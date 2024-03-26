@@ -1,16 +1,17 @@
 import React from "react";
 import './politicalparties.css';
+import { callApi, errorResponse, getSession, setSession } from './main';
+import { NavLink } from "react-router-dom";
 import tdpImage from './tdp.jpg';
 import ysrcpImage from './ysrcp.jpg';
 import janasenaImage from './janasena.jpg';
 import bjpImage from './bjp.png';
-import incImage from './inc.png';
 import cpiImage from './cpi.jpg';
-import { callApi, errorResponse, getSession, setSession } from './main';
-import { NavLink } from "react-router-dom";
-
+import incImage from './inc.png';
+import logouticon from './logouticon.jpg';
 const HS1 = { "paddingLeft": "5px", "marginRight": "20px" };
 const HS2 = {"float" : "right", "padding-right" : "5px", "cursor" : "pointer"};
+const HS3 = {"float" : "right", "height" : "16px", "margin-top" : "6px", "cursor" : "pointer"};
 const HS4 = {"float" : "right", "paddingRight" : "10px"};
 
 class PoliticalParties extends React.Component {
@@ -44,6 +45,7 @@ class PoliticalParties extends React.Component {
                 <div className='header5'>
                     <label style={HS1}>eBallot | ONLINE VOTING MANAGEMENT SYSTEM</label>
                     <label style={HS2} onClick={this.logout}>Logout</label>
+                    <img src={logouticon} alt='' style={HS3} onClick={this.logout} />
                     <NavLink to="/home1" className="nav-link">Home</NavLink>
                     <NavLink to="/about1" className="nav-link">About</NavLink>
                     <NavLink to="/voter" className="nav-link">Voter Registration</NavLink>
@@ -66,6 +68,7 @@ class PoliticalParties extends React.Component {
                                         <th>Serial No</th>
                                         <th>Party Name</th>
                                         <th>Candidate Name</th>
+                                        <th>Party Notation</th>
                                         <th>Party Symbol</th>
                                     </tr>
                                 </thead>
@@ -75,38 +78,45 @@ class PoliticalParties extends React.Component {
                                         <td>1</td>
                                         <td>TELUGU DESAM </td>
                                         <td>CHANDRABABU NAIDU</td>
-                                        <td><img src={tdpImage} alt="TELUGU DESAM Symbol" style={{ width: '50px', height: '50px' }} /></td>
+                                        <td>CYCLE</td>
+                                        <td><img src={tdpImage} alt="Description of image" /></td>
                                     </tr>
+
                                     {/* Repeat this structure for each party */}
                                     <tr>
                                         <td>2</td>
                                         <td>YSRCP</td>
                                         <td>JAGAN MOHAN REDDY</td>
-                                        <td><img src={ysrcpImage} alt="YSRCP Symbol" style={{ width: '50px', height: '50px' }} /></td>
+                                        <td>FAN</td>
+                                        <td><img src={ysrcpImage} alt="YSRCP SYMBOL" /></td>
                                     </tr>
                                     <tr>
                                         <td>3</td>
                                         <td>JANASENA</td>
                                         <td>PAWAN KALYAN</td>
-                                        <td><img src={janasenaImage} alt="JANASENA Symbol" style={{ width: '50px', height: '50px' }} /></td>
+                                        <td>GLASS</td>
+                                        <td><img src={janasenaImage} alt="" /></td>
                                     </tr>
                                     <tr>
                                         <td>4</td>
-                                        <td>KANNA LAKSMI NARAYANA</td>
                                         <td>BJP</td>
-                                        <td><img src={bjpImage} alt="BJP Symbol" style={{ width: '50px', height: '50px' }} /></td>
+                                        <td>KANNA LAKSMI NARAYANA</td>
+                                        <td>FLOWER</td>
+                                        <td><img src={bjpImage} alt="" /></td>
                                     </tr>
                                     <tr>
                                         <td>5</td>
+                                        <td>INC(Indian National Congress)</td>
                                         <td>Sake Sailajanath</td>
-                                        <td>CONGRESS</td>
-                                        <td><img src={incImage} alt="CONGRESS Symbol" style={{ width: '50px', height: '50px' }} /></td>
+                                        <td>HAND</td>
+                                        <td><img src={cpiImage} alt="" /></td>
                                     </tr>
                                     <tr>
                                         <td>6</td>
-                                        <td>RAKESH </td>
-                                        <td>Janata Dal (United)</td>
-                                        <td><img src={cpiImage} alt="Janata Dal (United) Symbol" style={{ width: '50px', height: '50px' }} /></td>
+                                        <td>CPI (Communist Party Of India)</td>
+                                        <td>RAKESH YADAV</td>
+                                        <td>CPI(Marxist)</td>
+                                        <td><img src={incImage} alt="" /></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -115,7 +125,7 @@ class PoliticalParties extends React.Component {
                     </div>
                 </div>
                 <div className='footer5'>
-                    Copyright © 2024, eBallot.
+                    Copyright © Online Voting 2024, eBallot.
                 </div>
             </div>
         );

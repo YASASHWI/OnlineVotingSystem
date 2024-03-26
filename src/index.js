@@ -12,6 +12,11 @@ import About1 from './about1';
 import Voter from './voter';
 import PoliticalParties from './politicalparties';
 import ChangePassword from './changepassword';
+import Admin from './admin';
+import Voterregistration from './voterregistration';
+import CandidateVote from './candidatevote';
+import Electionvoting from './electionvoting';
+
 function Website(){
   return(
     <BrowserRouter>
@@ -27,6 +32,10 @@ function Website(){
         <Route path='/voter' element={<Voter/>} />
         <Route path='/politicalparties' element={<PoliticalParties/>} />
         <Route path='/changepassword' element={<ChangePassword/>} />
+        <Route path='/admin' element={<Admin/>} />
+        <Route path='/voterregistration' element={<Voterregistration/>} />
+        <Route path='/candidatevote' element={<CandidateVote/>} />
+        <Route path='/electionvoting' element={<Electionvoting/>} />
       </Routes>
     </BrowserRouter>
 

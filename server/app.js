@@ -40,6 +40,20 @@ app.post('/registration/signup', async function(req, res){
         res.json(err).status(404);
     }
 });
+app.post('/contacts/done', async function(req, res){
+    try
+    {
+        conn = await client.connect();
+        db = conn.db('SDP');
+        message = db.collection('message');
+        data = await message.insertOne(req.body);
+        conn.close();
+        res.json("Registered successfully...");
+    }catch(err)
+    {
+        res.json(err).status(404);
+    }
+});
 //FORGOT PASSWORD MODULE
 app.post('/forgotpassword/pass', async function(req, res){
     try
@@ -72,19 +86,7 @@ app.post('/login/signin', async function(req, res){
     }
 });
 
-app.post('/contacts/message', async function(req, res){
-    try {
-        conn = await client.connect();
-        db = conn.db('SDP'); 
-        contacts = db.collection('contacts');
-        await contacts.insertOne(req.body);
-        conn.close();
-        res.status(201).json({ message: 'Contact message submitted successfully' });
-    } catch(err) {
-        console.error('Error submitting contact message:', err);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-});
+
 
 app.post('/home/uname', async function(req, res){
     try
@@ -121,7 +123,6 @@ app.post('/cp/updatepwd', async function(req, res){
         conn = await client.connect();
         db = conn.db('SDP');
         users = db.collection('users');
-        data = await users.updateOne({emailid : req.body.emailid}, {$set : {pwd : req.body.pwd}});
         conn.close();
         res.json("Password has been updated");
     }catch(err)
@@ -130,7 +131,7 @@ app.post('/cp/updatepwd', async function(req, res){
     }
 });
 
-app.post('/myprofile/info', async function (req, res) {
+/*app.post('/myprofile/info', async function (req, res) {
     try {
         const conn = await client.connect();
         const db = conn.db('SDP');
@@ -141,4 +142,76 @@ app.post('/myprofile/info', async function (req, res) {
     } catch (err) {
         res.json(err).status(404);
     }
+});*/
+app.post('/home/menu', async function(req, res){
+    try
+    {
+        conn = await client.connect();
+        db = conn.db('SDP');
+        menu = db.collection('menu');
+        data = await menu.find({}).sort({mid:1}).toArray();
+        conn.close();
+        res.json(data);
+    }catch(err)
+    {
+        res.json(err).status(404);
+    }
 });
+
+app.post('/home/menus', async function(req, res){
+    try
+    {
+        conn = await client.connect();
+        db = conn.db('SDP');
+        menus = db.collection('menus');
+        data = await menus.find(req.body).sort({smid:1}).toArray();
+        conn.close();
+        res.json(data);
+    }catch(err)
+    {
+        res.json(err).status(404);
+    }
+});
+
+app.post('/vote/submit', async function(req, res){
+    try
+    {
+        conn = await client.connect();
+        db = conn.db('SDP');
+        voters = db.collection('voters');
+        data = await voters.insertOne(req.body);
+        conn.close();
+        res.json("Voter Registered successfully...");
+    }catch(err)
+    {
+        res.json(err).status(404);
+    }
+});
+
+app.post('/candidate/submit', async function(req,res){
+    try{
+        conn = await client.connect();
+        db = conn.db('SDP');
+        candidate = db.collection('candidate');
+        data = await candidate.insertOne(req.body);
+        conn.close();
+        res.json("Candidate Verification Successfully...");
+    }catch(err)
+    {
+        res.json(err).status(404);
+    }
+})
+
+app.post('/voter/vote', async function(req,res){
+    try{
+        conn = await client.connect();
+        db = conn.db('SDP');
+        candidate = db.collection('candidate');
+        data = await candidate.insertOne(req.body);
+        conn.close();
+        res.json("Candidate Verification Successfully...");
+    }catch(err)
+    {
+        res.json(err).status(404);
+    }
+})
